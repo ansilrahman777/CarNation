@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import bg_vedio from "./../assets/videos/video1.mp4";
+import bg_video from "./../assets/videos/video1.mp4";
 import logo_name from "./../assets/images/icons/logo_name.png";
 import logo_icon from "./../assets/images/icons/logo_icon.png";
 
@@ -11,10 +11,20 @@ import pic24 from "./../assets/images/image/24.jpg";
 
 import bg123 from "./../assets/images/image/bg-image.png";
 
+import pic22 from "./../assets/images/image/22.jpg";
+import pic23 from "./../assets/images/image/23.jpg";
+import pic16 from "./../assets/images/image/16.jpg";
+import pic27 from "./../assets/images/image/2.jpg";
+import pic28 from "./../assets/images/image/28.jpg";
+
+import before_image from "./../assets/images/image/before.png";
+import after_image from "./../assets/images/image/after.png";
+
 import { FaTools, FaCarBattery, FaBolt, FaDollarSign } from "react-icons/fa";
 
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import MovingCar from "../components/ui/MovingCar";
+import { BeforeAfterSlider } from "../components/ui/BeforeAfter";
 
 const features = [
   {
@@ -52,8 +62,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  
-
   return (
     <>
       <section className="relative h-screen w-full">
@@ -64,7 +72,7 @@ export default function Home() {
           muted
           playsInline
         >
-          <source src={bg_vedio} type="video/mp4" />
+          <source src={bg_video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -107,8 +115,8 @@ export default function Home() {
       </section>
 
       <section
-        className="bg-cover bg-top bg-no-repeat bg-black"
-        style={{ backgroundImage: `url(${bg123})`, height: "400vh" }}
+        className="bg-cover bg-center bg-fixed bg-no-repeat bg-black min-h-screen"
+        style={{ backgroundImage: `url(${bg123})` }}
       >
         <div className="text-white">
           <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 md:flex-row md:justify-between">
@@ -147,15 +155,15 @@ export default function Home() {
           </div>
         </div>
 
-        <MovingCar />
+        {/* <MovingCar /> */}
 
-        <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-opacity-10 rounded-md sm:m-20 py-6 sm:py-12">
+        <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-opacity-5 rounded-md sm:m-20 py-6 sm:py-12">
           <div className="w-full items-center mx-auto max-w-screen-lg px-4 sm:px-6">
             <div className="group grid w-full grid-cols-2 max-md:grid-cols-1">
               <div className="relative flex before:block before:absolute before:h-1/6 before:w-2 before:bg-stone-200 before:top-0 before:right-0 before:rounded-lg before:transition-all group-hover:before:bg-red-700 overflow-hidden max-md:flex-col">
                 <div className="absolute bottom-0 right-0 w-4/6 overflow-hidden flex flex-col justify-center rounded-xl transition-all shadow-2xl max-md:relative max-md:w-full max-md:mb-4">
                   <motion.img
-                    src={pic24}
+                    src={pic28}
                     alt="car nation"
                     className="w-full h-auto object-cover aspect-square"
                     initial={{ opacity: 0, y: 50 }}
@@ -229,6 +237,84 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex pt-10 px-6 md:px-20  items-center justify-center bg-hero md:h-screen overflow-hidden">
+          <div class="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
+            <div class="w-full md:w-1/2 lg:pr-32">
+              <h2 class="text-3xl lg:text-4xl text-center md:text-left text-white leading-tight font-medium">
+                Restoring Cars, Rebuilding Confidence
+              </h2>
+              <p class="mt-4 md:mt-5 text-md lg:text-xl text-white text-justify font-light tracking-wider leading-relaxed">
+                Our expert, certified auto body technicians bring precision,
+                craftsmanship, and attention to detail to every repair. Whether
+                it's dents, scratches, or major collision damage, we restore
+                your vehicle to its original beauty and performance—swiftly and
+                skillfully.
+              </p>
+              <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start">
+                <button class="w-full sm:w-40 px-4 py-3 rounded font-semibold text-md bg-red-700 hover:bg-white text-white hover:text-red-700 b">
+                  CONTACT US
+                </button>
+                <button class="w-full mt-4 sm:mt-0 sm:ml-4 sm:w-40 px-4 py-3 rounded font-semibold text-md bg-white hover:bg-red-700 text-red-700 hover:text-white">
+                  OUR SERVICES
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+              <BeforeAfterSlider
+                beforeImg={before_image}
+                afterImg={after_image}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className=" min-h-screen py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+              {[
+                {
+                  src: pic22,
+                  label: "",
+                },
+                {
+                  src: pic23,
+                  label: "",
+                  span: "md:col-span-2",
+                },
+                {
+                  src: pic24,
+                  label: "",
+                  span: "md:col-span-2",
+                },
+                {
+                  src: pic16,
+                  label: "",
+                  span: "",
+                },                
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${
+                    item.span || ""
+                  }`}
+                >
+                  <img
+                    src={item.src}
+                    loading="lazy"
+                    alt={item.label}
+                    className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+                  <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                    {item.label}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
         </div>

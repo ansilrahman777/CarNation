@@ -109,12 +109,12 @@ function Navbar() {
               {/* Right Section: Social Media Icons */}
               <div className="hidden md:flex items-center gap-4">
                 <a
-                  href="tel:+971506848988"
+                  href="tel:+7125175703"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
                   <span className="text-white font-semibold hover:text-red-700 text-lg">
-                    +971 50 684 8988
+                    +971 2517 5703
                   </span>
                   <FaPhone className="text-xl text-white hover:text-red-700" />
                 </a>

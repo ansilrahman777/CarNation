@@ -10,7 +10,6 @@ const MovingCar = () => {
     offset: ["start start", "end end"],
   });
 
-  // Move the car from left (-20vw) to right (100vw)
   const carX = useTransform(scrollYProgress, [0, 1], ["-20vw", "100vw"]);
 
   return (
