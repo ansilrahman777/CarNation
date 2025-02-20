@@ -1,90 +1,176 @@
 // pages/Contact.jsx
 import { motion } from "framer-motion";
 import pic2 from "./../assets/images/image/2.jpg";
+import { Link } from "react-router-dom";
+import { AiOutlineMail, AiOutlineUser } from "react-icons/ai";
+import { BiPhone } from "react-icons/bi";
+import { MdSubject } from "react-icons/md";
+import { FaRegCommentDots } from "react-icons/fa";
+import { LuSendHorizontal } from "react-icons/lu";
+import { FaCircleArrowDown } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaTiktok,
+  FaFacebook,
+} from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div>
+    <>
       <section
-        className="bg-zinc-50 bg-cover bg-center min-h-screen"
+        className="relative h-screen bg-fixed bg-center bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${pic2})` }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="bg-slate-300 bg-opacity-70 rounded-xl shadow-lg p-8 md:p-12 "
-          >
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Info */}
-              <div>
-                <h2 className="text-4xl font-bold mb-8">Get in Touch</h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 bg-orange-500 rounded-lg flex items-center justify-center">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
-                    </div>
-                  </div>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative container justify-center mx-auto px-4 h-full flex items-center z-10">
+          <div className="max-w-2xl items-center justify-center text-white">
+            <h1 className="text-5xl font-bold mb-6">CONTACT US</h1>
+            {/* <FaCircleArrowDown className="animate-bounce" size={20} /> */}
+          </div>
+        </div>
+      </section>
 
-                  {/* Add similar blocks for Email and Address */}
+      <section className="bg-gray-100">
+        <div className="mx-auto w-full max-w-7xl px-5 py-5 md:px-10 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 sm:gap-20 items-start">
+            <div className="md:col-span-2">
+              <h2 className="font-bold text-black">Contact us</h2>
+              <h1 className="mb-3 pb-4 text-3xl font-bold text-black md:text-5xl">
+                Have questions?
+                <br />
+                Get in touch!
+              </h1>
+              <p className="mb-3 text-justify">
+                Have a question or need to book a service? We're here to help!
+                Whether it's routine maintenance, repairs, or custom
+                modifications, our team is ready to assist you.
+              </p>
+              <div className="space-y-4 text-lg text-gray-700">
+                <div className="flex items-center space-x-3">
+                  <FaEnvelope className="w-4 h-4 text-black hover:text-red-700" />
+                  <span>carnation@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaPhone className="w-4 h-4 text-black hover:text-red-700" />
+                  <span>+971 000 000 000 | +971 000 000 000</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaMapMarkerAlt className="w-4 h-4 text-black hover:text-red-700" />
+                  <span>Car Nation auto garage</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaMapMarkerAlt className="w-4 h-4 text-gray-100 " />
+                  <span>musafa m11 </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaMapMarkerAlt className="w-4 h-4 text-gray-100 " />
+                  <span>Abu Dhabi UAE</span>
                 </div>
               </div>
 
-              {/* Contact Form */}
-              <motion.form
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="space-y-6"
-              >
-                <div>
-                  <label className="block text-gray-700 mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 mb-2">Message</label>
-                  <textarea
-                    rows="4"
-                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  ></textarea>
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
-                >
-                  Send Message
-                </motion.button>
-              </motion.form>
+              <div className="mt-10 flex space-x-6">
+                <a href="#" className="text-black hover:text-red-700">
+                  <FaWhatsapp className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-black hover:text-red-700">
+                  <FaInstagram className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-black hover:text-red-700">
+                  <FaYoutube className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-black hover:text-red-700">
+                  <FaTiktok className="w-6 h-6" />
+                </a>
+                <a href="#" className="text-black hover:text-red-700">
+                  <FaFacebook className="w-6 h-6" />
+                </a>
+              </div>
             </div>
-          </motion.div>
+
+            <div className="md:col-span-3">
+              <form>
+                <div className="grid sm:grid-cols-2 gap-8">
+                  <div className="relative flex items-center w-full">
+                    <AiOutlineUser
+                      className="absolute left-2 text-gray-500"
+                      size={20}
+                    />
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                    />
+                  </div>
+
+                  <div className="relative flex items-center">
+                    <MdSubject
+                      className="absolute left-2 text-gray-500"
+                      size={20}
+                    />
+                    <input
+                      type="text"
+                      placeholder="Subject"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                    />
+                  </div>
+
+                  <div className="relative flex items-center">
+                    <BiPhone
+                      className="absolute left-2 text-gray-500"
+                      size={20}
+                    />
+                    <input
+                      type="text"
+                      placeholder="Phone No."
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                    />
+                  </div>
+
+                  <div className="relative flex items-center">
+                    <AiOutlineMail
+                      className="absolute left-2 text-gray-500"
+                      size={20}
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                    />
+                  </div>
+
+                  <div className="relative flex items-center sm:col-span-2">
+                    <FaRegCommentDots
+                      className="absolute left-2 top-4 text-gray-500"
+                      size={20}
+                    />
+                    <textarea
+                      placeholder="How can we help you? Feel Free to contact"
+                      rows="5"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="relative mt-12  justify-center  lg:ml-auto max-lg:w-full rounded-lg  inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-gray-400 border border-gray-400 hover:text-white group hover:bg-gray-50"
+                >
+                  <span class="absolute left-0 block w-full h-0 transition-all bg-red-700  group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                  <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                    <LuSendHorizontal className="ml-2" size={18} />
+                  </span>
+                  <span class="relative">Send Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

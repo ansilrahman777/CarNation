@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   return (
-    <div className="font-sans">
-      {/* Hero Section with Fixed Background */}
+    <div>
       <section 
         className="relative h-screen bg-fixed bg-center bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${pic11})` }}

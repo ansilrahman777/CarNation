@@ -173,7 +173,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="h-2/3 rounded-xl overflow-hidden max-md:h-64">
-                  <motion.img
+                  <img
                     src={pic20}
                     alt="car nation"
                     className="h-full w-full object-cover"
@@ -241,7 +241,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div class="flex pt-10 px-6 md:px-20  items-center justify-center bg-hero md:h-screen overflow-hidden">
+        <div class="flex px-10 mt-5 md:px-20 items-center justify-center bg-hero overflow-hidden">
           <div class="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
             <div class="w-full md:w-1/2 lg:pr-32">
               <h2 class="text-3xl lg:text-4xl text-center md:text-left text-white leading-tight font-medium">
@@ -272,7 +272,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" min-h-screen py-6 sm:py-8 lg:py-12">
+        <div className=" min-h-screen px-6 md:px-12 mt-10 ">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
               {[
@@ -294,7 +294,7 @@ export default function Home() {
                   src: pic16,
                   label: "",
                   span: "",
-                },                
+                },
               ].map((item, index) => (
                 <a
                   key={index}
