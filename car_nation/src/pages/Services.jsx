@@ -9,7 +9,6 @@ import technician from "./../assets/images/icons/technician.png";
 import { Link } from "react-router-dom";
 
 export default function Services() {
-
   return (
     <>
       <section
@@ -125,57 +124,6 @@ export default function Services() {
                 Contact Us Now
               </button>
             </motion.div>
-          </section>
-          
-
-          <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12 bg-white">
-            {/* Left Side - Text Content */}
-            <div className="md:w-1/2 text-left">
-              <h5 className="text-sm font-semibold uppercase text-gray-500">
-                Our Contacts
-              </h5>
-              <h2 className="text-4xl font-bold text-black mt-2">
-                Quality parts and excellent service
-              </h2>
-              <p className="text-lg font-semibold text-black mt-4">
-                Qadipiscing elit, sed do eiusmod tempor.
-              </p>
-              <p className="text-gray-600 mt-4">
-                Adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco.
-              </p>
-              <div className="mt-6 flex items-center">
-                <button className="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold mr-4">
-                  About Us
-                </button>
-                <div className="flex items-center">
-                  <span className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-2">
-                    📞
-                  </span>
-                  <span className="text-black font-semibold text-lg">
-                    0 800 555 44 33
-                  </span>
-                </div>
-              </div>
-              <button className="mt-6 bg-gray-100 text-gray-700 px-4 py-2 rounded-md">
-                Presale Chat
-              </button>
-            </div>
-
-            {/* Right Side - Overlapping Images */}
-            <div className="relative md:w-1/2 mt-10 md:mt-0 flex justify-center">
-              <img
-                src={pic1}
-                alt="Engine"
-                className="w-[300px] md:w-[400px] shadow-lg rounded-lg relative z-10"
-              />
-              <img
-                src={pic1}
-                alt="Interior"
-                className="w-[250px] md:w-[300px] shadow-lg rounded-lg absolute top-[-40px] right-[-20px] md:top-[-60px] md:right-[-50px] z-0"
-              />
-            </div>
           </section>
         </div>
       </section>

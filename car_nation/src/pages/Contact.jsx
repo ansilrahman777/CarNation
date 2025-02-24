@@ -26,12 +26,14 @@ export default function Contact() {
         className="relative h-screen bg-fixed bg-center bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${pic2})` }}
       >
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative container justify-center mx-auto px-4 h-full flex items-center z-10">
-          <div className="max-w-2xl items-center justify-center text-white">
-            <h1 className="text-5xl font-bold mb-6">CONTACT US</h1>
-            {/* <FaCircleArrowDown className="animate-bounce" size={20} /> */}
-          </div>
+        <div className="flex items-center justify-center h-screen">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 2 }}
+            className="text-4xl text-white md:text-5xl font-bold text-center"
+          >
+            CONTACT US
+          </motion.h2>
         </div>
       </section>
 
@@ -158,9 +160,9 @@ export default function Contact() {
 
                 <button
                   type="button"
-                  class="relative mt-12  justify-center  lg:ml-auto max-lg:w-full rounded-lg  inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-gray-400 border border-gray-400 hover:text-white group hover:bg-gray-50"
+                  class="relative mt-12  justify-center  lg:ml-auto max-lg:w-full rounded-lg  inline-flex items-center px-9 py-3 overflow-hidden text-base font-medium text-gray-400 border border-gray-400 hover:text-white group hover:bg-gray-50"
                 >
-                  <span class="absolute left-0 block w-full h-0 transition-all bg-red-700  group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                  <span class="absolute left-0 block w-full h-0 transition-all bg-black  group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                   <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                     <LuSendHorizontal className="ml-2" size={18} />
                   </span>
