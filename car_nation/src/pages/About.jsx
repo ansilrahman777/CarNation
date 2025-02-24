@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import pic11 from "./../assets/images/image/11.jpg";
-import { Link } from "react-router-dom";
 
 export default function About() {
   return (
