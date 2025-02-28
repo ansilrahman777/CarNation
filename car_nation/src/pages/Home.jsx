@@ -25,6 +25,7 @@ import { FaTools, FaCarBattery, FaBolt, FaDollarSign } from "react-icons/fa";
 import { motion } from "framer-motion";
 import MovingCar from "../components/ui/MovingCar";
 import { BeforeAfterSlider } from "../components/ui/BeforeAfter";
+import MovingText from "../components/ui/MovingText";
 
 const features = [
   {
@@ -155,6 +156,7 @@ export default function Home() {
           </div>
         </div>
 
+        <MovingText/>
         {/* <MovingCar /> */}
 
         <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-opacity-5 rounded-md sm:m-20 py-6 sm:py-12">
