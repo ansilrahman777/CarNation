@@ -157,9 +157,10 @@ export default function Home() {
         </div>
 
         <MovingText/>
-        {/* <MovingCar /> */}
 
-        <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-opacity-5 rounded-md sm:m-20 py-6 sm:py-12">
+        <MovingCar />
+
+        <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-opacity-5 sm:m-20 py-6 sm:py-12">
           <div className="w-full items-center mx-auto max-w-screen-lg px-4 sm:px-6">
             <div className="group grid w-full grid-cols-2 max-md:grid-cols-1">
               <div className="relative flex before:block before:absolute before:h-1/6 before:w-2 before:bg-stone-200 before:top-0 before:right-0 before:rounded-lg before:transition-all group-hover:before:bg-red-700 overflow-hidden max-md:flex-col">
@@ -167,7 +168,7 @@ export default function Home() {
                   <motion.img
                     src={pic28}
                     alt="car nation"
-                    className="w-full h-auto object-cover aspect-square"
+                    className="w-full h-auto object-cover aspect-square z-50"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -178,7 +179,7 @@ export default function Home() {
                   <img
                     src={pic20}
                     alt="car nation"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover relative "
                   />
                 </div>
                 <a className="absolute h-20 w-20 flex items-center justify-center rounded-full bottom-10 left-10 text-white before:block before:absolute before:h-20 before:w-20 border-2 before:rounded-full group-hover:before:animate-ping before:-z-10 hover:bg-red-700 max-md:bottom-4 max-md:left-4 max-md:h-16 max-md:w-16">

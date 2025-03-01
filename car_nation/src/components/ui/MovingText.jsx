@@ -13,21 +13,20 @@ export default function MovingText() {
             animate={{ x: ["0%", "-100%"] }}
             transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           >
-            <div className="flex">
-              <span className="mx-0">Cleaning ✷ Car Wash ✷ Premium Service ✷ Eco-Friendly ✷</span>
-              <span className="mx-0">Cleaning ✷ Car Wash ✷ Premium Service ✷ Eco-Friendly ✷</span>
+            <div className="flex text-transparent" style={{ WebkitTextStroke: "2px white" }}>
+              <span className="mx-0">Car Diagnostic ✷ Body Works & Painting ✷ Premium Service ✷ Fast Recovery ✷</span>
+              <span className="mx-0">Car Diagnostic ✷ Body Works & Painting ✷ Premium Service ✷ Fast Recovery ✷</span>
             </div>
           </motion.div>
 
-          {/* Second Line */}
           <motion.div
-            className="whitespace-nowrap text-[8vw] font-extrabold uppercase flex"
+            className="whitespace-nowrap text-[8vw] text-red-700 font-extrabold uppercase flex"
             animate={{ x: ["-100%", "0%"] }}
             transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           >
-            <div className="flex">
-              <span className="mx-0">Fast Service ✷ Shiny Finish ✷ Best Equipment ✷ Affordable Prices ✷</span>
-              <span className="mx-0">Fast Service ✷ Shiny Finish ✷ Best Equipment ✷ Affordable Prices ✷</span>
+            <div className="flex  text-transparent" style={{ WebkitTextStroke: "2px #b91c1c" }}>
+              <span className="mx-0">Expert Technicians ✷ Genuine Parts ✷ Fast & Reliable ✷ Affordable Prices ✷</span>
+              <span className="mx-0">Expert Technicians ✷ Genuine Parts ✷ Fast & Reliable ✷ Affordable Prices ✷</span>
             </div>
           </motion.div>
 

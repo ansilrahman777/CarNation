@@ -1,12 +1,11 @@
-// pages/Services.jsx
 import { motion } from "framer-motion";
 
 import pic1 from "./../assets/images/image/1.jpg";
-import parts from "./../assets/images/icons/parts.png";
-import fast from "./../assets/images/icons/fast.png";
-import price from "./../assets/images/icons/price.png";
-import technician from "./../assets/images/icons/technician.png";
+import pic23 from "./../assets/images/image/23.jpg";
+
+
 import { Link } from "react-router-dom";
+import ServiceList from "../components/ServiceList";
 
 export default function Services() {
   return (
@@ -27,21 +26,21 @@ export default function Services() {
       </section>
 
       <section className="bg-gray-200">
-        <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-20">
+        <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
           <div className="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="max-w-[720px]">
               <h1 className="mb-3 pb-4 text-4xl font-bold text-black md:text-6xl">
                 Complete Care for Your Vehicle
               </h1>
-              {/* <h1 className="mb-3 pb-4 text-xl font-bold text-black md:text-xl">
+              <h1 className="mb-3 pb-4 text-xl font-bold text-black md:text-xl">
             Drive with confidence—your car is in expert hands!
-            </h1> */}
+            </h1>
               <div className="flex items-center">
                 <Link
                   to="/contact"
-                  className="mr-5 inline-block rounded-full border-2 border-red-700 px-6 py-4 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
+                  className="mr-5 inline-block rounded-full border-2 border-red-700 px-6 py-1 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
                 >
-                  Let's Talk
+                  About Us
                 </Link>
               </div>
             </div>
@@ -64,49 +63,10 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="text-black body-font">
-          <div className="container py-5 mx-auto">
-            <div className="flex flex-wrap text-center justify-center">
-              {[
-                {
-                  img: parts,
-                  title: "Genuine Parts",
-                },
-                {
-                  img: fast,
-                  title: "Fast & Reliable",
-                },
-                {
-                  img: technician,
-                  title: "Expert Technicians",
-                },
-                {
-                  img: price,
-                  title: "Affordable & Transparent",
-                },
-              ].map((item, index) => (
-                <div key={index} className="p-2 md:w-1/4 sm:w-1/2">
-                  <div className="px-2 py-4 transform transition duration-500 hover:scale-110">
-                    <div className="flex justify-center">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-32 mb-3"
-                      />
-                    </div>
-                    <h2 className="title-font font-regular text-2xl text-black">
-                      {item.title}
-                    </h2>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceList />
 
-        <div className="font-sans overflow-hidden">
-          {/* CTA Section */}
-          <section className="py-20 bg-orange-500 text-white">
+        {/* <div className="font-sans overflow-hidden">
+          <section className="py-20 bg-red-700 text-white">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -120,12 +80,12 @@ export default function Services() {
                 Schedule your appointment today and experience the Car nation
                 difference
               </p>
-              <button className="bg-white text-orange-500 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors text-lg">
+              <button className="bg-white text-red-700 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors text-lg">
                 Contact Us Now
               </button>
             </motion.div>
           </section>
-        </div>
+        </div> */}
       </section>
     </>
   );
