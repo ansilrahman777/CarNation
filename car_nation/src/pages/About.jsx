@@ -6,6 +6,8 @@ import price from "./../assets/images/icons/price.png";
 import technician from "./../assets/images/icons/technician.png";
 import { Link } from "react-router-dom";
 
+import ab123 from "./../assets/images/icons/ab123.png";
+
 export default function About() {
   return (
     <div>
@@ -29,98 +31,65 @@ export default function About() {
           <div className="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="max-w-[720px]">
               <h1 className="mb-3 pb-4 text-4xl font-bold text-black md:text-6xl">
-                Committed to Quality, Driven by Trust
+                Committed to <span className="text-red-700">Quality</span>,
+                <br className="hidden md:flex" />Driven by <span className="text-red-700">Trust</span>
               </h1>
               <div className="flex items-center">
                 <Link
-                  to="/contact"
-                  className="mr-5 inline-block rounded-full border-2 border-red-700 px-6 py-2 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
+                  to="/services"
+                  className="mr-5 inline-block border-2 border-red-700 px-6 py-2 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
                 >
-                  Let's Talk
+                  Our Services
                 </Link>
               </div>
             </div>
 
             <div className="items-start">
               <p class="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
-                At Car Nation Auto Garage, we believe that every vehicle
-                deserves the highest level of care and attention. Our passion
-                for automobiles drives us to deliver exceptional service,
-                unmatched expertise, and reliable solutions for all your
-                automotive needs.
+                At Car Nation Auto Garage, we believe every vehicle deserves the highest level of care and attention. Driven by our passion for automobiles, we provide exceptional service, expertise, and reliable solutions for all your automotive needs, whether it’s routine maintenance, accident repairs, or full-scale modifications.
               </p>
               <p class="text-lg font-normal text-justify leading-relaxed">
-                With a team of skilled technicians, state-of-the-art tools, and
-                a customer-first approach, we ensure that your car receives
-                nothing but the best. Whether it's routine maintenance, accident
-                repairs, or full-scale modifications, we are dedicated to
-                restoring, enhancing, and protecting your vehicle.
+                Our skilled technicians use state-of-the-art tools and a customer-first approach to ensure your vehicle receives the best care. We are dedicated to restoring, enhancing, and protecting your vehicle, always striving to exceed your expectations with every service.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+
       <section className="bg-gray-200">
-        <div className="w-full flex flex-col md:flex-row mx-auto max-w-7xl px-5 py-5 md:px-10 md:py-10">
-          <div className="flex flex-col md:flex-row mx-auto">
-            <div className="w-full px-4 md:px-0 md:w-8/12 flex flex-col">
-              <div className="flex flex-col md:flex-row w-full items-center">
-                <img
-                  src="https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  className="flex-auto w-full md:w-1/3 md:pr-4"
-                  alt="Feature Image 1"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1628745750131-e5cfc5e70ced?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  className="hidden md:inline flex-auto md:w-1/3 md:pr-4"
-                  alt="Feature Image 2"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1628744876525-f2678d8af47f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  className="hidden md:inline flex-auto md:w-1/3 md:pr-4"
-                  alt="Feature Image 3"
-                />
-              </div>
-              <div className="w-[90%] md:w-full mx-auto flex flex-col mt-4 md:mt-0 md:flex-row">
-                <div className="w-full my-6 pr-4">
-                  <h1 className="text-3xl mt-2 md:text-4xl font-bold text-black">
-                    Our <span className="text-red-700">Mission</span>
-                  </h1>
-                  <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
-                    Our mission is to keep every vehicle in top condition by
-                    delivering expert repair, maintenance, and customization
-                    services with precision, efficiency, and care. We strive to
-                    exceed customer expectations through excellence in
-                    craftsmanship and service.
-                  </p>
-                  <Link
-                    to="/services"
-                    className="mr-5 inline-block border-2 border-red-700 px-6 py-2 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
-                  >
-                    Our Services
-                  </Link>
+        <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
+          <div className="grid grid-cols-1 items-start gap-8 sm:gap-20 lg:grid-cols-2">
+            <div className="items-start">
+
+              <h1 className="text-4xl font-bold text-black md:text-6xl">
+                Vision <br className="hidden md:flex" /><span className="text-red-700">& </span>Mission
+              </h1>
+              <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
+                Our Vision is to redefine automotive care by providing superior-quality services, cutting-edge solutions, and a customer experience that sets us apart as the most trusted auto garage.
+              </p>
+              <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
+                Our mission is to keep every vehicle in top condition by delivering expert repair, maintenance, and customization services with precision, efficiency, and care. We strive to exceed customer expectations through excellence in craftsmanship and service.              </p>
+
+            </div>
+            <div className="max-w-[720px]">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 ">
+                <div className="grid grid-cols-2 gap-4">
+                  <img
+                    className="w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+                    alt="office content 1"
+                  />
+                  <img
+                    className="mt-4 w-full lg:mt-10 rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
+                    alt="office content 2"
+                  />
                 </div>
               </div>
             </div>
-            <div className="w-full px-4 md:px-0 md:w-4/12 flex-col md:pl-8">
-              <h1 className="text-4xl mt-2 font-bold text-black">
-                Our <span className="text-red-700">Vision</span>
-              </h1>
-              {/* <h3 className="text-xl mt-3 text-gray-800 dark:text-white">
-            Use this component as a feature or showcase.
-          </h3> */}
-              <p className="text-md mt-2 text-black text-justify ">
-                To redefine automotive care by providing superior-quality
-                services, cutting-edge solutions, and a customer experience that
-                sets us apart as the most trusted auto garage.{" "}
-              </p>
-              <img
-                src="https://images.unsplash.com/photo-1653972233229-1b8c042d6d8e?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                className="w-full my-4 rounded-sm"
-                alt="Feature Preview"
-              />
-            </div>
+
+
           </div>
         </div>
       </section>
@@ -166,6 +135,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+
 
       <section className="relative bg-gray-900 text-white py-20 z-20">
         <div className="container mx-auto px-4">

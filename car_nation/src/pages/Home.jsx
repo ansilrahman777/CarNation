@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import bg_video from "./../assets/videos/video1.mp4";
 import logo_name from "./../assets/images/icons/logo_name.png";
 import logo_icon from "./../assets/images/icons/logo_icon.png";
+import img_4567 from "./../assets/images/icons/img_4567.png";
+import img_345 from "./../assets/images/icons/img345.png";
+import home_123 from "./../assets/images/icons/home_123.png";
 
 import pic20 from "./../assets/images/image/20.jpg";
 import pic24 from "./../assets/images/image/24.jpg";
@@ -15,7 +18,7 @@ import pic22 from "./../assets/images/image/22.jpg";
 import pic23 from "./../assets/images/image/23.jpg";
 import pic16 from "./../assets/images/image/16.jpg";
 import pic27 from "./../assets/images/image/2.jpg";
-import pic28 from "./../assets/images/image/28.jpg";
+import pic28 from "./../assets/images/image/19.jpg";
 
 import before_image from "./../assets/images/image/before.png";
 import after_image from "./../assets/images/image/after.png";
@@ -156,97 +159,189 @@ export default function Home() {
           </div>
         </div>
 
-        <MovingText/>
+        <MovingText />
 
-        <MovingCar />
+        <div className="text-white">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
+            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
+              <motion.h1
+                className="text-3xl font-bold leading-none sm:text-4xl"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                Expert in Auto Care <span className="text-red-700">&</span>{" "}
+                <br />
+                Repair Services
+              </motion.h1>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                At Car Nation Auto Garage, we provide comprehensive repair,
+                maintenance, and customization services to keep your vehicle
+                running smoothly and looking its best. Whether it's a routine
+                oil change, dent removal, engine repair, or a full modification,
+                our experienced technicians deliver precision, reliability, and
+                top-quality workmanship every time.
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-2 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                🚗 Trusted Repairs | 🔧 Skilled Technicians | ✅ Unmatched
+                Quality & Service
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-2 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                Drive in with confidence—leave with perfection!
+              </motion.p>
+            </div>
+            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
+              <motion.img
+                src={img_4567}
+                alt="CAR NATION"
+                className="object-contain"
+                whileTap={{ scale: 0.95 }}
+              />
+            </div>
+          </div>
+        </div>
 
-        <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-opacity-5 sm:m-20 py-6 sm:py-12">
-          <div className="w-full items-center mx-auto max-w-screen-lg px-4 sm:px-6">
-            <div className="group grid w-full grid-cols-2 max-md:grid-cols-1">
-              <div className="relative flex before:block before:absolute before:h-1/6 before:w-2 before:bg-stone-200 before:top-0 before:right-0 before:rounded-lg before:transition-all group-hover:before:bg-red-700 overflow-hidden max-md:flex-col">
-                <div className="absolute bottom-0 right-0 w-4/6 overflow-hidden flex flex-col justify-center rounded-xl transition-all shadow-2xl max-md:relative max-md:w-full max-md:mb-4">
-                  <motion.img
-                    src={pic28}
-                    alt="car nation"
-                    className="w-full h-auto object-cover aspect-square z-50"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05 }}
-                  />
-                </div>
-                <div className="h-2/3 rounded-xl overflow-hidden max-md:h-64">
-                  <img
-                    src={pic20}
-                    alt="car nation"
-                    className="h-full w-full object-cover relative "
-                  />
-                </div>
-                <a className="absolute h-20 w-20 flex items-center justify-center rounded-full bottom-10 left-10 text-white before:block before:absolute before:h-20 before:w-20 border-2 before:rounded-full group-hover:before:animate-ping before:-z-10 hover:bg-red-700 max-md:bottom-4 max-md:left-4 max-md:h-16 max-md:w-16">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-8 h-8 max-md:w-6 max-md:h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
-                    />
-                  </svg>
-                </a>
-              </div>
-              <div className="max-md:mt-8">
-                <div className="pl-12 max-md:pl-0">
-                  <h2 className="text-4xl text-white font-semibold mb-6 max-md:text-3xl max-md:leading-tight">
-                    Expert in Auto Care <span className="text-red-700">&</span>{" "}
-                    Repair Services
-                  </h2>
+        <div className="text-white">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
+            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
+              <motion.img
+                src={home_123}
+                alt="CAR NATION"
+                className="object-contain"
+                whileTap={{ scale: 0.95 }}
+              />
+            </div>
+            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
+              <motion.h1
+                className="text-3xl font-bold leading-none sm:text-4xl"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                Beyond Repairs<span className="text-red-700"> :</span> <br />{" "}
+                Comprehensive Care for Your Car
+              </motion.h1>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                We don't just repair vehicles—we ensure they stay in top
+                condition for years to come. From preventive maintenance that
+                keeps your engine running smoothly to deep interior and exterior
+                detailing that restores its showroom shine, we provide complete
+                care for your car. Our skilled professionals use advanced tools
+                and premium products to deliver unmatched quality and
+                long-lasting protection.{" "}
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                🛠️ Expert Maintenance | ✨ Superior Detailing | 🚗 Long-Term
+                Vehicle Care
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                Give your car the care it deserves—because a well-maintained car
+                is a reliable one!
+              </motion.p>
+            </div>
+          </div>
+        </div>
 
-                  <p className="mb-6 text-white max-md:text-sm text-justify">
-                    At{" "}
-                    <span className="text-white font-semibold">
-                      Car Nation Auto Garage
-                    </span>
-                    &nbsp;we provide top-quality automotive repair, maintenance,
-                    and customization services to keep your vehicle in peak
-                    condition. Whether it's routine servicing or major repairs,
-                    our expert technicians ensure precision, reliability, and
-                    efficiency in every job.
-                  </p>
-
-                  <h3 className="mb-4 font-semibold text-xl text-white max-md:text-lg">
-                    Why Choose Car Nation Auto Garage?
-                  </h3>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3">
-                    {features.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 md:p-4 rounded-lg bg-opacity-10 bg-black 
-                     hover:bg-opacity-20 transition-all duration-300 ease-in-out text-white"
-                      >
-                        <span className="p-1.5 sm:p-2 lg:p-2.5 bg-red-700 rounded-full flex-shrink-0">
-                          {item.icon}
-                        </span>
-                        <span className="font-semibold text-xs sm:text-sm lg:text-base leading-tight break-words">
-                          {item.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+        <div className="text-white">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
+            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
+              <motion.h1
+                className="text-3xl font-bold leading-none sm:text-4xl"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                Reliable Vehicle Recovery{" "}
+                <span className="text-red-700">&</span> <br />
+                Pickup Service
+              </motion.h1>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                Stuck with a non-starting or broken-down vehicle? Car Nation
+                Auto Garage offers professional recovery and pickup services at
+                an affordable rate. Whether your car has suffered a breakdown,
+                an accident, or won’t start, our team will safely transport it
+                to our workshop for expert repairs. Once fixed, we also provide
+                delivery options to get your vehicle back to you in top
+                condition.
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-2 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                🚛 Secure Pickup | 🛠️ Expert Repairs | 🚗 Convenient Delivery
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-2 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                Call us today for a reliable recovery service—fast, secure, and affordable!
+              </motion.p>
+            </div>
+            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
+              <motion.img
+                src={img_345}
+                alt="CAR NATION"
+                className="object-contain"
+                whileTap={{ scale: 0.95 }}
+              />
             </div>
           </div>
         </div>
 
         <div class="flex px-10 mt-5 md:px-20 items-center justify-center bg-hero overflow-hidden">
           <div class="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
-            <div class="w-full md:w-1/2 lg:pr-32">
+            <div class="w-full md:w-1/2">
               <h2 class="text-3xl lg:text-4xl text-center md:text-left text-white leading-tight font-medium">
                 Restoring Cars, Rebuilding Confidence
               </h2>
@@ -256,6 +351,10 @@ export default function Home() {
                 it's dents, scratches, or major collision damage, we restore
                 your vehicle to its original beauty and performance—swiftly and
                 skillfully.
+              </p>
+              <p class="mt-4 md:mt-5 text-md lg:text-xl text-white text-justify font-light tracking-wider leading-relaxed">
+                - Drive in today and experience the art of automotive
+                restoration!
               </p>
               <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start">
                 <button class="w-full sm:w-40 px-4 py-3 rounded font-semibold text-md bg-red-700 hover:bg-white text-white hover:text-red-700 b">
@@ -321,6 +420,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <MovingCar />
       </section>
     </>
   );

@@ -13,7 +13,7 @@ const MovingCar = () => {
   const carX = useTransform(scrollYProgress, [0, 1], ["-20vw", "100vw"]);
 
   return (
-    <div ref={scrollRef} className="relative w-full h-40 flex items-center overflow-hidden">
+    <div ref={scrollRef} className="relative w-full py-36 h-40 flex items-center overflow-hidden">
       <motion.img
         src={carImage}
         alt="Moving Car"

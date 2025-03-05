@@ -3,6 +3,31 @@ import React from "react";
 function test() {
   return (
     <div>
+      {/* 
+<h3 className="mb-4 font-semibold text-xl text-white max-md:text-lg">
+                Why Choose Car Nation Auto Garage?
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3">
+                {features.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 md:p-4 rounded-lg bg-opacity-10 bg-black 
+                     hover:bg-opacity-20 transition-all duration-300 ease-in-out text-white"
+                  >
+                    <span className="p-1.5 sm:p-2 lg:p-2.5 bg-red-700 rounded-full flex-shrink-0">
+                      {item.icon}
+                    </span>
+                    <span className="font-semibold text-xs sm:text-sm lg:text-base leading-tight break-words">
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
+              </div> */}
+
+
+
+
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
           <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
