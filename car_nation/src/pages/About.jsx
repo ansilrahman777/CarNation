@@ -6,7 +6,8 @@ import price from "./../assets/images/icons/price.png";
 import technician from "./../assets/images/icons/technician.png";
 import { Link } from "react-router-dom";
 
-import ab123 from "./../assets/images/icons/ab123.png";
+import cn from "./../assets/images/image/cn.png";
+import cn1 from "./../assets/images/image/cn1.png";
 
 export default function About() {
   return (
@@ -15,10 +16,13 @@ export default function About() {
         className="relative h-screen bg-fixed bg-center bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${pic11})` }}
       >
-        <div className="flex items-center justify-center h-screen">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-700/10 via-gray-700/30 to-gray-700/80"></div>
+
+        <div className="relative flex items-center justify-center h-screen">
           <motion.h2
             initial={{ opacity: 0 }}
-            animate={{ opacity: 2 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
             className="text-4xl text-white md:text-5xl font-bold text-center"
           >
             ABOUT US
@@ -26,13 +30,15 @@ export default function About() {
         </div>
       </section>
 
+
       <section className="bg-gray-200">
         <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
           <div className="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="max-w-[720px]">
               <h1 className="mb-3 pb-4 text-4xl font-bold text-black md:text-6xl">
                 Committed to <span className="text-red-700">Quality</span>,
-                <br className="hidden md:flex" />Driven by <span className="text-red-700">Trust</span>
+                <br className="hidden md:flex" />
+                Driven by <span className="text-red-700">Trust</span>
               </h1>
               <div className="flex items-center">
                 <Link
@@ -46,50 +52,63 @@ export default function About() {
 
             <div className="items-start">
               <p class="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
-                At Car Nation Auto Garage, we believe every vehicle deserves the highest level of care and attention. Driven by our passion for automobiles, we provide exceptional service, expertise, and reliable solutions for all your automotive needs, whether it’s routine maintenance, accident repairs, or full-scale modifications.
+                At Car Nation Auto Garage, we believe every vehicle deserves the
+                highest level of care and attention. Driven by our passion for
+                automobiles, we provide exceptional service, expertise, and
+                reliable solutions for all your automotive needs, whether it’s
+                routine maintenance, accident repairs, or full-scale
+                modifications.
               </p>
               <p class="text-lg font-normal text-justify leading-relaxed">
-                Our skilled technicians use state-of-the-art tools and a customer-first approach to ensure your vehicle receives the best care. We are dedicated to restoring, enhancing, and protecting your vehicle, always striving to exceed your expectations with every service.
+                Our skilled technicians use state-of-the-art tools and a
+                customer-first approach to ensure your vehicle receives the best
+                care. We are dedicated to restoring, enhancing, and protecting
+                your vehicle, always striving to exceed your expectations with
+                every service.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-
       <section className="bg-gray-200">
         <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
           <div className="grid grid-cols-1 items-start gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="items-start">
-
               <h1 className="text-4xl font-bold text-black md:text-6xl">
-                Vision <br className="hidden md:flex" /><span className="text-red-700">& </span>Mission
+                Vision <br className="hidden md:flex" />
+                <span className="text-red-700">& </span>Mission
               </h1>
               <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
-                Our Vision is to redefine automotive care by providing superior-quality services, cutting-edge solutions, and a customer experience that sets us apart as the most trusted auto garage.
+                Our Vision is to redefine automotive care by providing
+                superior-quality services, cutting-edge solutions, and a
+                customer experience that sets us apart as the most trusted auto
+                garage.
               </p>
               <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
-                Our mission is to keep every vehicle in top condition by delivering expert repair, maintenance, and customization services with precision, efficiency, and care. We strive to exceed customer expectations through excellence in craftsmanship and service.              </p>
-
+                Our mission is to keep every vehicle in top condition by
+                delivering expert repair, maintenance, and customization
+                services with precision, efficiency, and care. We strive to
+                exceed customer expectations through excellence in craftsmanship
+                and service.{" "}
+              </p>
             </div>
             <div className="max-w-[720px]">
               <div className="flex items-center justify-center mt-8 lg:mt-0 ">
                 <div className="grid grid-cols-2 gap-4">
                   <img
-                    className="w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
-                    alt="office content 1"
+                    className="w-[272px] h-[378px] object-cover rounded-lg"
+                    src={cn1}
+                    alt="Car Nation"
                   />
                   <img
-                    className="mt-4 w-full lg:mt-10 rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-                    alt="office content 2"
+                    className="mt-4 w-[272px] h-[378px] object-cover lg:mt-10 rounded-lg"
+                    src={cn}
+                    alt="Car Nation"
                   />
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
@@ -135,8 +154,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-
 
       <section className="relative bg-gray-900 text-white py-20 z-20">
         <div className="container mx-auto px-4">

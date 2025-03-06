@@ -29,6 +29,7 @@ import { motion } from "framer-motion";
 import MovingCar from "../components/ui/MovingCar";
 import { BeforeAfterSlider } from "../components/ui/BeforeAfter";
 import MovingText from "../components/ui/MovingText";
+import ShuffleHero from "../components/ui/ShuffleHero";
 
 const features = [
   {
@@ -325,7 +326,8 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
-                Call us today for a reliable recovery service—fast, secure, and affordable!
+                Call us today for a reliable recovery service—fast, secure, and
+                affordable!
               </motion.p>
             </div>
             <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
@@ -339,40 +341,62 @@ export default function Home() {
           </div>
         </div>
 
-        <div class="flex px-10 mt-5 md:px-20 items-center justify-center bg-hero overflow-hidden">
-          <div class="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
-            <div class="w-full md:w-1/2">
-              <h2 class="text-3xl lg:text-4xl text-center md:text-left text-white leading-tight font-medium">
-                Restoring Cars, Rebuilding Confidence
-              </h2>
-              <p class="mt-4 md:mt-5 text-md lg:text-xl text-white text-justify font-light tracking-wider leading-relaxed">
-                Our expert, certified auto body technicians bring precision,
-                craftsmanship, and attention to detail to every repair. Whether
-                it's dents, scratches, or major collision damage, we restore
-                your vehicle to its original beauty and performance—swiftly and
-                skillfully.
-              </p>
-              <p class="mt-4 md:mt-5 text-md lg:text-xl text-white text-justify font-light tracking-wider leading-relaxed">
-                - Drive in today and experience the art of automotive
-                restoration!
-              </p>
-              <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start">
-                <button class="w-full sm:w-40 px-4 py-3 rounded font-semibold text-md bg-red-700 hover:bg-white text-white hover:text-red-700 b">
-                  CONTACT US
-                </button>
-                <button class="w-full mt-4 sm:mt-0 sm:ml-4 sm:w-40 px-4 py-3 rounded font-semibold text-md bg-white hover:bg-red-700 text-red-700 hover:text-white">
-                  OUR SERVICES
-                </button>
-              </div>
+        <div className="text-white">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
+            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
+                <BeforeAfterSlider
+                  beforeImg={before_image}
+                  afterImg={after_image}
+                />
             </div>
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-              <BeforeAfterSlider
-                beforeImg={before_image}
-                afterImg={after_image}
-              />
+            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
+              <motion.h1
+                className="text-3xl font-bold leading-none sm:text-4xl"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                Restoring Cars<span className="text-red-700"> &</span> <br />
+                Rebuilding Confidence
+              </motion.h1>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                Our expert, certified auto body technicians bring precision,
+                craftsmanship, and attention to detail to every repair. From
+                minor dents and scratches to major collision damage, we ensure
+                your vehicle is restored to its original beauty and peak
+                performance—swiftly and skillfully.
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                🚗 Flawless Restorations | 🔧 Expert Workmanship | 🎨 Factory-Finish Quality
+              </motion.p>
+              <motion.p
+                className="text-xl text-justify mt-5 font-light leading-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+              >
+                Drive in today and experience the art of automotive restoration!
+              </motion.p>
             </div>
           </div>
         </div>
+
+        {/* <ShuffleHero /> */}
+
 
         <div className=" min-h-screen px-6 md:px-12 mt-10 ">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -401,9 +425,8 @@ export default function Home() {
                 <a
                   key={index}
                   href="#"
-                  className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${
-                    item.span || ""
-                  }`}
+                  className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${item.span || ""
+                    }`}
                 >
                   <img
                     src={item.src}

@@ -26,7 +26,7 @@ export function BeforeAfterSlider({ beforeImg, afterImg }) {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full max-w-2xl mx-auto h-96 overflow-hidden cursor-ew-resize"
+      className="relative w-full max-w-2xl mx-auto h-64 overflow-hidden cursor-ew-resize"
       onMouseMove={handleDrag} 
       onTouchMove={(e) => handleDrag(e.touches[0])}
       onMouseDown={handleMouseDown}
