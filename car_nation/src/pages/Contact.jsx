@@ -32,22 +32,18 @@ export default function Contact() {
   const [notifications, setNotifications] = useState([]);
   const [submitting, setSubmitting] = useState(false);
 
-  // Add Notification
   const addNotification = (message) => {
     setNotifications((prev) => [{ id: Math.random(), text: message }, ...prev]);
   };
 
-  // Remove Notification
   const removeNotif = (id) => {
     setNotifications((prev) => prev.filter((n) => n.id !== id));
   };
 
-  // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Validate Form
   const validateForm = () => {
     if (!formData.name.trim()) {
       addNotification("Name is required.");
@@ -79,13 +75,13 @@ export default function Contact() {
     return true;
   };
 
-  // Handle Form Submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
-    setSubmitting(true); // Show loading
+    setSubmitting(true);
 
     try {
       const response = await fetch(
@@ -121,7 +117,7 @@ export default function Contact() {
       console.error("Error:", error);
       addNotification("Network error. Please try again later.");
     } finally {
-      setSubmitting(false); // Hide loading
+      setSubmitting(false); 
     }
   };
 
@@ -303,7 +299,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={submitting} // ✅ Disable when submitting
+                  disabled={submitting}
                   className={`relative mt-12 justify-center lg:ml-auto max-lg:w-full rounded-lg inline-flex items-center px-9 py-3 overflow-hidden text-base font-medium border ${
                     submitting
                       ? "bg-gray-300 text-black cursor-not-allowed"

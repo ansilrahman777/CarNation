@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import pic1 from "./../assets/images/image/1.jpg";
 import pic23 from "./../assets/images/image/23.jpg";
 
-
 import { Link } from "react-router-dom";
 import ServiceList from "../components/ServiceList";
 
@@ -33,8 +32,8 @@ export default function Services() {
                 Complete Care for Your Vehicle
               </h1>
               <h1 className="mb-3 pb-4 text-xl font-bold text-black md:text-xl">
-            Drive with confidence—your car is in expert hands!
-            </h1>
+                Drive with confidence—your car is in expert hands!
+              </h1>
               <div className="flex items-center">
                 <Link
                   to="/contact"

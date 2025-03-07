@@ -1,6 +1,5 @@
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import bg_video from "./../assets/videos/video1.mp4";
 import logo_name from "./../assets/images/icons/logo_name.png";
@@ -9,7 +8,6 @@ import img_4567 from "./../assets/images/icons/img_4567.png";
 import img_345 from "./../assets/images/icons/img345.png";
 import home_123 from "./../assets/images/icons/home_123.png";
 
-import pic20 from "./../assets/images/image/20.jpg";
 import pic24 from "./../assets/images/image/24.jpg";
 
 import bg123 from "./../assets/images/image/bg-image.png";
@@ -17,19 +15,15 @@ import bg123 from "./../assets/images/image/bg-image.png";
 import pic22 from "./../assets/images/image/22.jpg";
 import pic23 from "./../assets/images/image/23.jpg";
 import pic16 from "./../assets/images/image/16.jpg";
-import pic27 from "./../assets/images/image/2.jpg";
-import pic28 from "./../assets/images/image/19.jpg";
 
 import before_image from "./../assets/images/image/before.png";
 import after_image from "./../assets/images/image/after.png";
 
 import { FaTools, FaCarBattery, FaBolt, FaDollarSign } from "react-icons/fa";
 
-import { motion } from "framer-motion";
-import MovingCar from "../components/ui/MovingCar";
 import { BeforeAfterSlider } from "../components/ui/BeforeAfter";
+import MovingCar from "../components/ui/MovingCar";
 import MovingText from "../components/ui/MovingText";
-import ShuffleHero from "../components/ui/ShuffleHero";
 
 const features = [
   {
@@ -130,8 +124,10 @@ export default function Home() {
                 src={logo_icon}
                 alt="CAR NATION"
                 className="object-contain h-80"
-                whileHover={{ scale: 1.1, rotate: 0 }}
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
               />
             </div>
 
@@ -149,9 +145,9 @@ export default function Home() {
               </motion.h1>
               <motion.h1
                 className="text-xl font-bold leading-none mt-5"
-                initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
-                whileInView={{ opacity: 1, x: 0 }} // Transition to normal position when in view
-                viewport={{ once: true, amount: 0.5 }} // Trigger when 50% of element is in view
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
                 - delivering quality, reliability, and care in every service!
@@ -167,8 +163,8 @@ export default function Home() {
             <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
               <motion.h1
                 className="text-3xl font-bold leading-none sm:text-4xl"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
               >
@@ -178,8 +174,8 @@ export default function Home() {
               </motion.h1>
               <motion.p
                 className="text-xl text-justify mt-5 font-light leading-none"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
@@ -192,8 +188,8 @@ export default function Home() {
               </motion.p>
               <motion.p
                 className="text-xl text-justify mt-2 font-light leading-none"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
@@ -202,8 +198,8 @@ export default function Home() {
               </motion.p>
               <motion.p
                 className="text-xl text-justify mt-2 font-light leading-none"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
@@ -215,20 +211,26 @@ export default function Home() {
                 src={img_4567}
                 alt="CAR NATION"
                 className="object-contain"
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
               />
             </div>
           </div>
         </div>
 
         <div className="text-white">
-          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start overflow-hidden">
             <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
               <motion.img
                 src={home_123}
                 alt="CAR NATION"
                 className="object-contain"
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
               />
             </div>
             <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
@@ -282,12 +284,12 @@ export default function Home() {
         </div>
 
         <div className="text-white">
-          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
-            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start overflow-hidden">
+            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5 overflow-hidden">
               <motion.h1
                 className="text-3xl font-bold leading-none sm:text-4xl"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
               >
@@ -297,8 +299,8 @@ export default function Home() {
               </motion.h1>
               <motion.p
                 className="text-xl text-justify mt-5 font-light leading-none"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
@@ -312,8 +314,8 @@ export default function Home() {
               </motion.p>
               <motion.p
                 className="text-xl text-justify mt-2 font-light leading-none"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
@@ -321,8 +323,8 @@ export default function Home() {
               </motion.p>
               <motion.p
                 className="text-xl text-justify mt-2 font-light leading-none"
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
@@ -335,21 +337,30 @@ export default function Home() {
                 src={img_345}
                 alt="CAR NATION"
                 className="object-contain"
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: -0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
               />
             </div>
           </div>
         </div>
 
         <div className="text-white">
-          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start">
-            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5">
-                <BeforeAfterSlider
-                  beforeImg={before_image}
-                  afterImg={after_image}
-                />
-            </div>
-            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5">
+          <div className="container flex flex-col justify-center px-6 mx-auto sm:py-12 md:flex-row md:justify-start overflow-hidden">
+            <motion.div
+              className="flex items-center justify-center p-6 mt-8 lg:mt-0 md:w-2/5"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1, ease: "easeInOut" }}>
+              <BeforeAfterSlider
+                beforeImg={before_image}
+                afterImg={after_image}
+
+              />
+            </motion.div>
+            <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5 overflow-hidden">
               <motion.h1
                 className="text-3xl font-bold leading-none sm:text-4xl"
                 initial={{ opacity: 0, x: 100 }}
@@ -394,9 +405,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* <ShuffleHero /> */}
-
 
         <div className=" min-h-screen px-6 md:px-12 mt-10 ">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">

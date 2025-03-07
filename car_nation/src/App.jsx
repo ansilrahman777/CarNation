@@ -6,10 +6,12 @@ import Services from './pages/Services'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Aside from './components/Aside'
+import ScrollToTop from './components/ui/ScrollToTop'
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navbar />
       <Aside />
       <main className="flex-grow">
