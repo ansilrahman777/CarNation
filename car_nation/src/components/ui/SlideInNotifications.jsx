@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FiCheckSquare, FiX } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -32,7 +32,9 @@ const Notification = ({ text, id, removeNotif }) => {
       animate={{ y: 0, scale: 1 }}
       exit={{ x: "100%", opacity: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="p-2 flex items-start rounded gap-2 text-xs font-medium shadow-lg text-white bg-indigo-500 pointer-events-auto"
+      className={`p-2 flex items-start rounded gap-2 text-base font-medium shadow-lg text-white ${
+        text.includes("success") ? "bg-green-600" : "bg-red-600"
+      } pointer-events-auto`}
     >
       <FiCheckSquare className="mt-0.5" />
       <span>{text}</span>

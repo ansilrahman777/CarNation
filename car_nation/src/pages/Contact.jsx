@@ -18,17 +18,29 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { useState } from "react";
+import SlideInNotifications from "../components/ui/SlideInNotifications";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    firstName: "",
+    name: "",
     subject: "",
     phone: "",
     email: "",
     message: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [notifications, setNotifications] = useState([]);
+  const [submitting, setSubmitting] = useState(false);
+
+  // Add Notification
+  const addNotification = (message) => {
+    setNotifications((prev) => [{ id: Math.random(), text: message }, ...prev]);
+  };
+
+  // Remove Notification
+  const removeNotif = (id) => {
+    setNotifications((prev) => prev.filter((n) => n.id !== id));
+  };
 
   // Handle Input Change
   const handleChange = (e) => {
@@ -37,79 +49,79 @@ export default function Contact() {
 
   // Validate Form
   const validateForm = () => {
-    let newErrors = {};
-
-    // First Name Validation
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
-    } else if (!/^[A-Za-z\s]+$/.test(formData.firstName.trim())) {
-      newErrors.firstName = "First name must only contain letters";
+    if (!formData.name.trim()) {
+      addNotification("Name is required.");
+      return false;
     }
-
-    // Subject Validation
+    if (!/^[A-Za-z\s]+$/.test(formData.name.trim())) {
+      addNotification("Name must contain only letters.");
+      return false;
+    }
     if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
+      addNotification("Subject is required.");
+      return false;
     }
-
-    // Phone Number Validation (10 digits, no leading zeros)
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^[1-9]\d{9}$/.test(formData.phone)) {
-      newErrors.phone =
-        "Enter a valid 10-digit phone number without leading zero";
+    if (!formData.phone.trim() || !/^\d{9,12}$/.test(formData.phone)) {
+      addNotification("Enter a valid phone number (9-12 digits).");
+      return false;
     }
-
-    // Email Validation
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      newErrors.email = "Enter a valid email address";
-    } else if (/\.\./.test(formData.email)) {
-      newErrors.email = "Email cannot have consecutive dots";
+    if (
+      !formData.email.trim() ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())
+    ) {
+      addNotification("Enter a valid email address.");
+      return false;
     }
-
-    // Message Validation
-    if (!formData.message.trim()) {
-      newErrors.message = "Message cannot be empty";
-    } else if (formData.message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters long";
+    if (!formData.message.trim() || formData.message.length < 10) {
+      addNotification("Message must be at least 10 characters long.");
+      return false;
     }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return true;
   };
 
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return; // Stop form submission if validation fails
-    }
+    if (!validateForm()) return;
 
-    const response = await fetch(
-      "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL", // Replace with your actual script URL
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    setSubmitting(true); // Show loading
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxmFDP5C5bAdpVw20sPIhV3grnCv1F_d3AnkODueynF8ZfXzDPWFVR68SocIjGO-oAPTQ/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        }
+      );
+
+      const text = await response.text();
+      console.log("Raw Response:", text);
+
+      if (!text) throw new Error("Empty response from server");
+
+      const result = JSON.parse(text);
+      console.log("Parsed Response:", result);
+
+      if (result.result === "success") {
+        addNotification("Message sent successfully!");
+        setFormData({
+          name: "",
+          subject: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        addNotification("Failed to send message. Try again.");
       }
-    );
-
-    if (response.ok) {
-      alert("Message sent successfully!");
-      setFormData({
-        firstName: "",
-        subject: "",
-        phone: "",
-        email: "",
-        message: "",
-      });
-      setErrors({});
-    } else {
-      alert("Failed to send message. Please try again.");
+    } catch (error) {
+      console.error("Error:", error);
+      addNotification("Network error. Please try again later.");
+    } finally {
+      setSubmitting(false); // Hide loading
     }
   };
 
@@ -206,6 +218,11 @@ export default function Contact() {
             </div>
 
             <div className="md:col-span-3">
+              <SlideInNotifications
+                notifications={notifications}
+                removeNotif={removeNotif}
+              />
+
               <form onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="relative flex items-center w-full">
@@ -215,16 +232,13 @@ export default function Contact() {
                     />
                     <input
                       type="text"
-                      name="firstName"
-                      placeholder="First Name"
-                      value={formData.firstName}
+                      name="name"
+                      placeholder="Name"
+                      value={formData.name}
                       onChange={handleChange}
                       className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
-                  {errors.firstName && (
-                    <p className="text-red-600">{errors.firstName}</p>
-                  )}
 
                   <div className="relative flex items-center">
                     <MdSubject
@@ -240,9 +254,6 @@ export default function Contact() {
                       className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
-                  {errors.subject && (
-                    <p className="text-red-600">{errors.subject}</p>
-                  )}
 
                   <div className="relative flex items-center">
                     <BiPhone
@@ -258,9 +269,6 @@ export default function Contact() {
                       className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
-                  {errors.phone && (
-                    <p className="text-red-600">{errors.phone}</p>
-                  )}
 
                   <div className="relative flex items-center">
                     <AiOutlineMail
@@ -276,9 +284,6 @@ export default function Contact() {
                       className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
-                  {errors.email && (
-                    <p className="text-red-600">{errors.email}</p>
-                  )}
 
                   <div className="relative flex items-center sm:col-span-2">
                     <FaRegCommentDots
@@ -294,20 +299,48 @@ export default function Contact() {
                       className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     ></textarea>
                   </div>
-                  {errors.message && (
-                    <p className="text-red-600">{errors.message}</p>
-                  )}
                 </div>
 
                 <button
                   type="submit"
-                  className="relative mt-12 justify-center lg:ml-auto max-lg:w-full rounded-lg inline-flex items-center px-9 py-3 overflow-hidden text-base font-medium text-gray-400 border border-gray-400 hover:text-white group hover:bg-gray-50"
+                  disabled={submitting} // ✅ Disable when submitting
+                  className={`relative mt-12 justify-center lg:ml-auto max-lg:w-full rounded-lg inline-flex items-center px-9 py-3 overflow-hidden text-base font-medium border ${
+                    submitting
+                      ? "bg-gray-300 text-black cursor-not-allowed"
+                      : "text-black border-gray-400 hover:text-white hover:bg-black"
+                  }`}
                 >
-                  <span className="absolute left-0 block w-full h-0 transition-all bg-black group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-                  <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                  <span class="absolute left-0 block w-full h-0 transition-all bg-black  group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                  <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                     <LuSendHorizontal className="ml-2" size={18} />
                   </span>
-                  <span className="relative">Send Message</span>
+                  <span className="relative">
+                    {submitting ? (
+                      <span className="flex items-center">
+                        <svg
+                          className="animate-spin h-5 w-5 mr-2 text-white"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8v8H4z"
+                          ></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      "Send Message"
+                    )}
+                  </span>
                 </button>
               </form>
             </div>
