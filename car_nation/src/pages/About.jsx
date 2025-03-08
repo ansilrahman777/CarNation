@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import pic11 from "./../assets/images/image/11.jpg";
 import parts from "./../assets/images/icons/parts.png";
 import fast from "./../assets/images/icons/fast.png";
 import price from "./../assets/images/icons/price.png";
 import technician from "./../assets/images/icons/technician.png";
-import { Link } from "react-router-dom";
 
 import cn from "./../assets/images/image/cn.png";
 import cn1 from "./../assets/images/image/cn1.png";
+import bg_img_1 from "./../assets/images/image/bg_img_1.png";
 
 export default function About() {
   return (
@@ -30,12 +31,14 @@ export default function About() {
         </div>
       </section>
 
-
-      <section className="bg-gray-200">
+      <section
+        className="bg-black/90 overflow-hidden bg-fixed bg-cover bg-center min-h-screen"
+        style={{ backgroundImage: `url(${bg_img_1})` }}
+      >
         <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
           <div className="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="max-w-[720px]">
-              <h1 className="mb-3 pb-4 text-4xl font-bold text-black md:text-6xl">
+              <h1 className="mb-3 pb-4 text-4xl font-bold text-white md:text-6xl">
                 Committed to <span className="text-red-700">Quality</span>,
                 <br className="hidden md:flex" />
                 Driven by <span className="text-red-700">Trust</span>
@@ -43,14 +46,14 @@ export default function About() {
               <div className="flex items-center">
                 <Link
                   to="/services"
-                  className="mr-5 inline-block border-2 border-red-700 px-6 py-2 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
+                  className="mr-5 inline-block border-2 border-red-700 px-6 py-2 text-center font-bold text-white transition hover:bg-red-700 md:mr-6 lg:mr-8"
                 >
                   Our Services
                 </Link>
               </div>
             </div>
 
-            <div className="items-start">
+            <div className="items-start text-white">
               <p class="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
                 At Car Nation Auto Garage, we believe every vehicle deserves the
                 highest level of care and attention. Driven by our passion for
@@ -69,23 +72,21 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="bg-gray-200">
         <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
           <div className="grid grid-cols-1 items-start gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="items-start">
-              <h1 className="text-4xl font-bold text-black md:text-6xl">
+              <h1 className="text-4xl font-bold text-white md:text-6xl">
                 Vision <br className="hidden md:flex" />
                 <span className="text-red-700">& </span>Mission
               </h1>
-              <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
+              <p className="text-md mb-4 mt-2 text-justify  text-white justify-center">
                 Our Vision is to redefine automotive care by providing
                 superior-quality services, cutting-edge solutions, and a
                 customer experience that sets us apart as the most trusted auto
                 garage.
               </p>
-              <p className="text-md mb-4 mt-2 text-justify  text-black justify-center">
+              <p className="text-md mb-4 mt-2 text-justify  text-white justify-center">
                 Our mission is to keep every vehicle in top condition by
                 delivering expert repair, maintenance, and customization
                 services with precision, efficiency, and care. We strive to
@@ -111,10 +112,8 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="bg-gray-200">
-        <div className="text-black body-font">
+        <div className="text-white body-font">
           <div className="container py-5 mx-auto">
             <div className="flex flex-wrap text-center justify-center">
               {[
@@ -144,7 +143,7 @@ export default function About() {
                         className="w-32 mb-3"
                       />
                     </div>
-                    <h2 className="title-font font-regular text-2xl text-black">
+                    <h2 className="title-font font-regular text-2xl text-white">
                       {item.title}
                     </h2>
                   </div>
@@ -153,24 +152,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="relative bg-gray-900 text-white py-20 z-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "15+", label: "Years Experience" },
-              { number: "20k+", label: "Vehicles Serviced" },
-              { number: "100%", label: "Satisfaction Guarantee" },
-              { number: "50+", label: "Certified Experts" },
-            ].map((stat) => (
-              <div key={stat.label} className="p-6">
-                <div className="text-5xl font-bold mb-4">{stat.number}</div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );

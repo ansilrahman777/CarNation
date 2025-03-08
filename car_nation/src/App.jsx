@@ -6,10 +6,20 @@ import Services from './pages/Services'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Aside from './components/Aside'
+import Loader from './components/Loader'
 import ScrollToTop from './components/ui/ScrollToTop'
+import { useEffect, useState } from 'react'
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 4000);
+  }, []);
   return (
+    <>
+    <Loader isLoading={isLoading} />
+    {!isLoading && (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <Navbar />
@@ -23,6 +33,8 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </div>)}
+    </>
+
   )
 }

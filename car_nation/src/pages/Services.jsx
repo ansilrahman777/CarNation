@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import pic1 from "./../assets/images/image/1.jpg";
-import pic23 from "./../assets/images/image/23.jpg";
+import bg_img_1 from "./../assets/images/image/bg_img_1.png";
 
 import { Link } from "react-router-dom";
 import ServiceList from "../components/ServiceList";
@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <>
       <section
-        className="bg-zinc-50 overflow-hidden bg-fixed bg-cover bg-center min-h-screen"
+        className="overflow-hidden bg-fixed bg-cover bg-center min-h-screen"
         style={{ backgroundImage: `url(${pic1})` }}
       >
         <div className="flex items-center justify-center h-screen">
@@ -24,27 +24,30 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="bg-gray-200">
+      <section
+        className="bg-black/90 overflow-hidden bg-fixed bg-cover bg-center min-h-screen"
+        style={{ backgroundImage: `url(${bg_img_1})` }}
+      >
         <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
           <div className="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2">
             <div className="max-w-[720px]">
-              <h1 className="mb-3 pb-4 text-4xl font-bold text-black md:text-6xl">
+              <h1 className="mb-3 pb-4 text-4xl font-bold text-white md:text-6xl">
                 Complete Care for Your Vehicle
               </h1>
-              <h1 className="mb-3 pb-4 text-xl font-bold text-black md:text-xl">
+              <h1 className="mb-3 pb-4 text-xl font-bold text-white md:text-xl">
                 Drive with confidence—your car is in expert hands!
               </h1>
               <div className="flex items-center">
                 <Link
                   to="/contact"
-                  className="mr-5 inline-block rounded-full border-2 border-red-700 px-6 py-1 text-center font-bold text-black transition hover:bg-red-700 md:mr-6 lg:mr-8"
+                  className="mr-5 inline-block rounded-full border-2 border-red-700 px-6 py-1 text-center font-bold text-white transition hover:bg-red-700 md:mr-6 lg:mr-8"
                 >
                   About Us
                 </Link>
               </div>
             </div>
 
-            <div className="items-start">
+            <div className="items-start text-white">
               <p class="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
                 From minor repairs to complete transformations, we ensure every
                 vehicle receives the highest level of care and craftsmanship.

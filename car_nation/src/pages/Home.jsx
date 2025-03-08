@@ -16,6 +16,8 @@ import pic22 from "./../assets/images/image/22.jpg";
 import pic23 from "./../assets/images/image/23.jpg";
 import pic16 from "./../assets/images/image/16.jpg";
 
+import bg_img_1 from "./../assets/images/image/bg_img_1.png";
+
 import before_image from "./../assets/images/image/before.png";
 import after_image from "./../assets/images/image/after.png";
 
@@ -115,7 +117,7 @@ export default function Home() {
 
       <section
         className="bg-cover bg-center bg-fixed bg-no-repeat bg-black min-h-screen"
-        style={{ backgroundImage: `url(${bg123})` }}
+        style={{ backgroundImage: `url(${bg_img_1})` }}
       >
         <div className="text-white">
           <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 md:flex-row md:justify-between">
@@ -353,11 +355,11 @@ export default function Home() {
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1, ease: "easeInOut" }}>
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
               <BeforeAfterSlider
                 beforeImg={before_image}
                 afterImg={after_image}
-
               />
             </motion.div>
             <div className="flex flex-col justify-center p-6 text-left rounded-sm  md:w-3/5 overflow-hidden">
@@ -391,7 +393,8 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               >
-                🚗 Flawless Restorations | 🔧 Expert Workmanship | 🎨 Factory-Finish Quality
+                🚗 Flawless Restorations | 🔧 Expert Workmanship | 🎨
+                Factory-Finish Quality
               </motion.p>
               <motion.p
                 className="text-xl text-justify mt-5 font-light leading-none"
@@ -433,8 +436,9 @@ export default function Home() {
                 <a
                   key={index}
                   href="#"
-                  className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${item.span || ""
-                    }`}
+                  className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${
+                    item.span || ""
+                  }`}
                 >
                   <img
                     src={item.src}

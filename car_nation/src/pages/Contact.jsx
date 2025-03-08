@@ -19,6 +19,7 @@ import {
 } from "react-icons/fa";
 import { useState } from "react";
 import SlideInNotifications from "../components/ui/SlideInNotifications";
+import bg_img_1 from "./../assets/images/image/bg_img_1.png";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -75,7 +76,6 @@ export default function Contact() {
     return true;
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -117,7 +117,7 @@ export default function Contact() {
       console.error("Error:", error);
       addNotification("Network error. Please try again later.");
     } finally {
-      setSubmitting(false); 
+      setSubmitting(false);
     }
   };
 
@@ -141,32 +141,35 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-gray-100">
+      <section
+        className="bg-black/90 overflow-hidden bg-fixed bg-cover bg-center min-h-screen"
+        style={{ backgroundImage: `url(${bg_img_1})` }}
+      >
         <div className="mx-auto w-full max-w-7xl px-5 py-5 md:px-10 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 sm:gap-20 items-start">
             <div className="md:col-span-2">
-              <h2 className="font-bold text-black">Contact us</h2>
-              <h1 className="mb-3 pb-4 text-3xl font-bold text-black md:text-5xl">
+              <h2 className="font-bold text-white">Contact us</h2>
+              <h1 className="mb-3 pb-4 text-3xl font-bold text-white md:text-5xl">
                 Have questions?
                 <br />
                 Get in touch!
               </h1>
-              <p className="mb-3 font-medium text-justify">
+              <p className="mb-3 text-white font-normal text-justify">
                 Have a question or need to book a service? We're here to help!
                 Whether it's routine maintenance, repairs, or custom
                 modifications, our team is ready to assist you.
               </p>
-              <div className="space-y-2 font-medium text-lg text-black">
+              <div className="space-y-2 font-normal text-lg text-white">
                 <div className="flex items-center space-x-3">
-                  <FaEnvelope className="w-4 h-4 text-black hover:text-red-700" />
+                  <FaEnvelope className="w-4 h-4 text-white hover:text-red-700" />
                   <span>carnationauh@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaPhone className="w-4 h-4 text-black hover:text-red-700" />
+                  <FaPhone className="w-4 h-4 text-white hover:text-red-700" />
                   <span>+971 2517 5703 | +971 52 252 0955</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaMapMarkerAlt className="w-4 h-4 text-black hover:text-red-700" />
+                  <FaMapMarkerAlt className="w-4 h-4 text-white hover:text-red-700" />
                   <span>Car Nation Auto Garage</span>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -182,31 +185,31 @@ export default function Contact() {
               <div className="mt-10 flex space-x-6">
                 <a
                   href="wahttps://wa.link/sikj7y"
-                  className="text-black hover:text-red-700"
+                  className="text-white hover:text-red-700"
                 >
                   <FaWhatsapp className="w-6 h-6" />
                 </a>
                 <a
                   href="https://www.instagram.com/carnationautogarage?igsh=MWlmeWc2eGRxODU4YQ=="
-                  className="text-black hover:text-red-700"
+                  className="text-white hover:text-red-700"
                 >
                   <FaInstagram className="w-6 h-6" />
                 </a>
                 <a
                   href="https://youtube.com/@cnagcarnationautogarage?si=IbpqSOl5ydOx5n_N"
-                  className="text-black hover:text-red-700"
+                  className="text-white hover:text-red-700"
                 >
                   <FaYoutube className="w-6 h-6" />
                 </a>
                 <a
                   href="https://www.tiktok.com/@user1243615341681?_t=ZS-8u6X5UgpVdI&_r=1"
-                  className="text-black hover:text-red-700"
+                  className="text-white hover:text-red-700"
                 >
                   <FaTiktok className="w-6 h-6" />
                 </a>
                 <a
                   href="https://www.facebook.com/p/Car-Nation-Auto-Garage-100089364137242/"
-                  className="text-black hover:text-red-700"
+                  className="text-white hover:text-red-700"
                 >
                   <FaFacebook className="w-6 h-6" />
                 </a>
@@ -223,7 +226,7 @@ export default function Contact() {
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="relative flex items-center w-full">
                     <AiOutlineUser
-                      className="absolute left-2 text-gray-500"
+                      className="absolute left-2 text-white"
                       size={20}
                     />
                     <input
@@ -232,13 +235,13 @@ export default function Contact() {
                       placeholder="Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-white border-b border-white focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
 
                   <div className="relative flex items-center">
                     <MdSubject
-                      className="absolute left-2 text-gray-500"
+                      className="absolute left-2 text-white"
                       size={20}
                     />
                     <input
@@ -247,28 +250,25 @@ export default function Contact() {
                       placeholder="Subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-white border-b border-white focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
 
                   <div className="relative flex items-center">
-                    <BiPhone
-                      className="absolute left-2 text-gray-500"
-                      size={20}
-                    />
+                    <BiPhone className="absolute left-2 text-white" size={20} />
                     <input
                       type="text"
                       name="phone"
                       placeholder="Phone No."
                       value={formData.phone}
                       onChange={handleChange}
-                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-white border-b border-white focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
 
                   <div className="relative flex items-center">
                     <AiOutlineMail
-                      className="absolute left-2 text-gray-500"
+                      className="absolute left-2 text-white"
                       size={20}
                     />
                     <input
@@ -277,13 +277,13 @@ export default function Contact() {
                       placeholder="Email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-white border-b border-white focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     />
                   </div>
 
                   <div className="relative flex items-center sm:col-span-2">
                     <FaRegCommentDots
-                      className="absolute left-2 top-4 text-gray-500"
+                      className="absolute left-2 top-4 text-white"
                       size={20}
                     />
                     <textarea
@@ -292,7 +292,7 @@ export default function Contact() {
                       rows="5"
                       value={formData.message}
                       onChange={handleChange}
-                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-black border-b border-gray-400 focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
+                      className="pl-8 pr-2 py-3 bg-transparent w-full text-lg text-white border-b border-white focus:border-red-700 hover:border-red-700 outline-none transition-all duration-500"
                     ></textarea>
                   </div>
                 </div>
@@ -303,10 +303,9 @@ export default function Contact() {
                   className={`relative mt-12 justify-center lg:ml-auto max-lg:w-full rounded-lg inline-flex items-center px-9 py-3 overflow-hidden text-base font-medium border ${
                     submitting
                       ? "bg-gray-300 text-black cursor-not-allowed"
-                      : "text-black border-gray-400 hover:text-white hover:bg-black"
+                      : "text-white border-white hover:text-black hover:bg-white"
                   }`}
                 >
-                  <span class="absolute left-0 block w-full h-0 transition-all bg-black  group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
                   <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                     <LuSendHorizontal className="ml-2" size={18} />
                   </span>
