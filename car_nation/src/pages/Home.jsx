@@ -26,6 +26,7 @@ import { FaTools, FaCarBattery, FaBolt, FaDollarSign } from "react-icons/fa";
 import { BeforeAfterSlider } from "../components/ui/BeforeAfter";
 import MovingCar from "../components/ui/MovingCar";
 import MovingText from "../components/ui/MovingText";
+import CarServiceSection from "../components/CarServiceSection ";
 
 const features = [
   {
@@ -408,6 +409,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <CarServiceSection />
 
         <div className=" min-h-screen px-6 md:px-12 mt-10 ">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
