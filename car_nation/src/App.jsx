@@ -9,6 +9,8 @@ import Aside from './components/Aside'
 import Loader from './components/Loader'
 import ScrollToTop from './components/ui/ScrollToTop'
 import { useEffect, useState } from 'react'
+import ScrollToTopButton from './components/ui/ScrollToTopButton'
+import AsideAlert from './components/AsideAlert'
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,22 +20,25 @@ export default function App() {
   }, []);
   return (
     <>
-    <Loader isLoading={isLoading} />
-    {!isLoading && (
-    <div className="min-h-screen flex flex-col">
-      <ScrollToTop />
-      <Navbar />
-      <Aside />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>)}
+      <Loader isLoading={isLoading} />
+      {!isLoading && (
+        <div className="min-h-screen flex flex-col">
+          <ScrollToTop />
+          <ScrollToTopButton/>
+          <Navbar />
+          <Aside />
+          <AsideAlert />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/services" element={<Services />} />
+            </Routes>
+          </main>
+          <Footer />
+          
+        </div>)}
     </>
 
   )
