@@ -303,7 +303,7 @@ export default function Contact() {
                       : "text-white border-white hover:text-black hover:bg-white"
                   }`}
                 >
-                  <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                  <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                     <LuSendHorizontal className="ml-2" size={18} />
                   </span>
                   <span className="relative">

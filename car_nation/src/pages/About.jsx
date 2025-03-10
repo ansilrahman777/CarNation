@@ -54,7 +54,7 @@ export default function About() {
             </div>
 
             <div className="items-start text-white">
-              <p class="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
+              <p className="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
                 At Car Nation Auto Garage, we believe every vehicle deserves the
                 highest level of care and attention. Driven by our passion for
                 automobiles, we provide exceptional service, expertise, and
@@ -62,7 +62,7 @@ export default function About() {
                 routine maintenance, accident repairs, or full-scale
                 modifications.
               </p>
-              <p class="text-lg font-normal text-justify leading-relaxed">
+              <p className="text-lg font-normal text-justify leading-relaxed">
                 Our skilled technicians use state-of-the-art tools and a
                 customer-first approach to ensure your vehicle receives the best
                 care. We are dedicated to restoring, enhancing, and protecting

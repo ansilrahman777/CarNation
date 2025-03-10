@@ -48,14 +48,14 @@ export default function Services() {
             </div>
 
             <div className="items-start text-white">
-              <p class="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
+              <p className="text-lg font-normal text-justify leading-relaxed mt-4 mb-4">
                 From minor repairs to complete transformations, we ensure every
                 vehicle receives the highest level of care and craftsmanship.
                 Our team uses advanced techniques and quality materials to
                 restore, maintain, and enhance your car's performance and
                 appearance.
               </p>
-              <p class="text-lg font-normal text-justify leading-relaxed">
+              <p className="text-lg font-normal text-justify leading-relaxed">
                 With precision, expertise, and a commitment to excellence, we
                 handle everything from routine servicing to complex repairs. No
                 matter the job, we prioritize safety, efficiency, and customer
