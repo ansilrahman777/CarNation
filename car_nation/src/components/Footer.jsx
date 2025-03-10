@@ -161,7 +161,7 @@ export default function Footer() {
           </div>
 
           <div className="border-t border-white mt-5 pt-5 text-center text-white">
-            <p>&copy; 2023 CNAR Garage. All rights reserved.</p>
+            <p>&copy; Car Nation Auto Garage. All rights reserved.</p>
           </div>
         </div>
       </footer>
