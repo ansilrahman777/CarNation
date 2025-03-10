@@ -23,7 +23,7 @@ function Aside() {
             <FaInstagram className="text-2xl hover:scale-110 hover:text-red-700 transition-transform" />
           </a>
           <a
-            href="https://www.facebook.com/p/Car-Nation-Auto-Garage-100089364137242//"
+            href="https://www.facebook.com/p/Car-Nation-Auto-Garage-100089364137242"
             target="_blank"
             rel="noopener noreferrer"
           >
