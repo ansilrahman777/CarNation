@@ -11,6 +11,7 @@ import ScrollToTop from './components/ui/ScrollToTop'
 import { useEffect, useState } from 'react'
 import ScrollToTopButton from './components/ui/ScrollToTopButton'
 import AsideAlert from './components/AsideAlert'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/services" element={<Services />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
