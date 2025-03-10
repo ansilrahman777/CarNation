@@ -12,7 +12,7 @@ import bg_img_1 from "./../assets/images/image/bg_img_1.png";
 
 export default function About() {
   return (
-    <div>
+    <>
       <section
         className="relative h-screen bg-fixed bg-center bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${pic11})` }}
@@ -32,7 +32,7 @@ export default function About() {
       </section>
 
       <section
-        className="bg-black/90 overflow-hidden bg-fixed bg-cover bg-center min-h-screen"
+        className="bg-black/90 overflow-hidden bg-fixed bg-cover bg-center min-h-screen "
         style={{ backgroundImage: `url(${bg_img_1})` }}
       >
         <div className="mx-auto w-full max-w-7xl px-5 py-5  md:px-10 md:py-10">
@@ -113,7 +113,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="text-white body-font">
+        <div className="text-white body-font mb-12">
           <div className="container py-5 mx-auto">
             <div className="flex flex-wrap text-center justify-center">
               {[
@@ -154,6 +154,6 @@ export default function About() {
         </div>
 
       </section>
-    </div>
+    </>
   );
 }

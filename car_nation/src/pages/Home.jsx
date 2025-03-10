@@ -8,14 +8,6 @@ import img_4567 from "./../assets/images/icons/img_4567.png";
 import img_345 from "./../assets/images/icons/img345.png";
 import home_123 from "./../assets/images/icons/home_123.png";
 
-import pic24 from "./../assets/images/image/24.jpg";
-
-import bg123 from "./../assets/images/image/bg-image.png";
-
-import pic22 from "./../assets/images/image/22.jpg";
-import pic23 from "./../assets/images/image/23.jpg";
-import pic16 from "./../assets/images/image/16.jpg";
-
 import bg_img_1 from "./../assets/images/image/bg_img_1.png";
 
 import before_image from "./../assets/images/image/before.png";

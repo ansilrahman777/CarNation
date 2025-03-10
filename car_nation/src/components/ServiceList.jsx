@@ -179,11 +179,11 @@ const ServiceList = () => {
   ];
 
   return (
-    <section className="bg-transparent">
-      <div className="container mx-auto px-5 py-5 md:px-10 md:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    <section className="bg-transparent w-full px-4 py-6 sm:px-6 lg:px-12 lg:py-12 mb-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
               className="group pb-24 relative overflow-hidden"
               initial={{ opacity: 0, x: 100 }}
@@ -195,36 +195,43 @@ const ServiceList = () => {
                 delay: index * 0.2,
               }}
             >
+              {/* Gradient Overlay */}
               <div className="group-hover:translate-y-0 transition-all duration-700 translate-y-full top-0 right-0 bottom-24 left-0 absolute bg-gradient-to-b from-transparent to-red-700 z-10"></div>
 
+              {/* Image */}
               <img
                 src={service.image}
-                className="transition-all group-hover:scale-125 duration-700 mr-4 h-80 w-full object-cover"
-                zz
+                className="transition-all group-hover:scale-125 duration-700 mr-4 h-52 w-full object-cover"
                 alt={service.title}
               />
 
-              <p className="absolute inset-0 flex items-center justify-center text-white text-lg font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 text-center px-4">
+              {/* Description with adjusted padding to avoid overlap */}
+              <p className="absolute inset-0 flex items-center justify-center text-white text-lg font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 text-center px-4 pb-16 sm:pb-20 md:pb-24">
                 {service.description}
               </p>
 
+              {/* Bottom Section */}
               <div className="bg-red-700 absolute z-10 bottom-0 left-0 w-full h-24 flex flex-col justify-center items-center">
+                {/* SVG Icon */}
                 <div className="z-20 absolute -top-5 w-full flex justify-center">
                   <img
                     className="group-hover:text-red-700 border-2 border-white group-hover:bg-white w-10 h-10 p-1 bg-red-700 rounded-full transition-all"
                     src={service.svg}
-                  ></img>
+                    alt="icon"
+                  />
                 </div>
 
+                {/* Small Decorative Cut Element */}
                 <div className="group-hover:hidden transition-all duration-1000 w-4 absolute overflow-hidden inline-block right-0 -top-6">
                   <div className="h-6 bg-red-900 -rotate-45 transform origin-bottom-right"></div>
                 </div>
 
+                {/* Title */}
                 <h2 className="font-semibold uppercase text-white">
                   {service.title}
                 </h2>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

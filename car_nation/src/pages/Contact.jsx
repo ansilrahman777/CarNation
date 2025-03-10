@@ -84,14 +84,11 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxmFDP5C5bAdpVw20sPIhV3grnCv1F_d3AnkODueynF8ZfXzDPWFVR68SocIjGO-oAPTQ/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
-        }
-      );
+      const response = await fetch(import.meta.env.VITE_CONTACT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
 
       const text = await response.text();
       console.log("Raw Response:", text);
@@ -340,6 +337,15 @@ export default function Contact() {
               </form>
             </div>
           </div>
+        </div>
+        <div className="relative w-full h-96">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.4493579321525!2d54.5097172!3d24.3656667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e417615fe7a27%3A0xb19763ba8243b4da!2sCar%20Nation%20Auto%20Garage!5e0!3m2!1sen!2sae!4v1741613209051!5m2!1sen!2sae"
+            allowFullScreen
+            aria-hidden="false"
+            tabIndex="10"
+          ></iframe>
         </div>
       </section>
     </>
