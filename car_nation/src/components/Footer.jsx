@@ -92,18 +92,6 @@ export default function Footer() {
                   </span>
                 </a>
               </p>
-              <p className="text-white text-sm md:text-base">
-                <a
-                  href="tel:+7125175703"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <FaPhone className="text-md text-white" />
-                  <span className="text-white hover:underline text-sm md:text-base">
-                    +971 2517 5703
-                  </span>
-                </a>
-              </p>
               <p className="text-white text-sm">
                 <a
                   href="mailto:carnationauh@gmail.com"
@@ -113,6 +101,30 @@ export default function Footer() {
                   <IoMail className="text-xl text-white" />
                   <span className="text-white hover:underline text-sm md:text-base">
                     carnationauh@gmail.com
+                  </span>
+                </a>
+              </p>
+              <p className="text-white text-sm md:text-base">
+                <a
+                  href="tel:+7125175703"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <FaPhone className="text-md text-white" />
+                  <span className="text-white hover:underline text-sm md:text-base">
+                    +971 25 17 5703
+                  </span>
+                </a>
+              </p>
+              <p className="text-white text-sm md:text-base">
+                <a
+                  href="tel:+7125175703"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <FaPhone className="text-md text-transparent" />
+                  <span className="text-white hover:underline text-sm md:text-base">
+                    +971 52 252 0955
                   </span>
                 </a>
               </p>
