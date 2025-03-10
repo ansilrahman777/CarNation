@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "lottie-react": "^2.4.1",
-    "motion": "^12.4.10",
-    "react-window": "^1.8.11"
-  }
-}
