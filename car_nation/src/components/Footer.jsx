@@ -112,7 +112,7 @@ export default function Footer() {
                 >
                   <FaPhone className="text-md text-white" />
                   <span className="text-white hover:underline text-sm md:text-base">
-                    +971 25 17 5703
+                    +971 2517 5703
                   </span>
                 </a>
               </p>
